@@ -45,14 +45,21 @@ h1, h2, h3, p { margin-top: 0; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 12px;
   font-size: 13px;
 }
 
-.nav-cta {
+.nav-links a {
   border: 1px solid var(--gold);
   padding: 11px 17px;
   color: var(--gold);
+  transition: color .2s ease, background-color .2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #111;
+  background: var(--gold);
 }
 
 .menu-toggle {
@@ -145,14 +152,14 @@ h1 {
   right: -3vw;
   bottom: 0;
   width: min(58vw, 820px);
-  height: 94%;
+  height: calc(100% - 115px);
 }
 
 .hero-portrait img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 24%;
+  object-fit: contain;
+  object-position: center top;
   filter: saturate(.92) contrast(1.04);
 }
 
@@ -166,8 +173,14 @@ h1 {
 .portrait-frame {
   position: absolute;
   z-index: 2;
-  inset: 8% 7% 6% 12%;
+  top: 2%;
+  left: 50%;
+  width: auto;
+  max-width: 94%;
+  height: 96%;
+  aspect-ratio: 2836 / 4337;
   border: 1px solid rgba(202,161,91,.35);
+  transform: translateX(-50%);
   pointer-events: none;
 }
 
@@ -317,12 +330,12 @@ h1 {
 }
 
 .headshot-crop {
-  background-image: url("media/joy-headshot.jpeg");
+  background-image: url("media/joy-headshot-web.jpeg");
   background-position: center 25%;
 }
 
 .bts-crop {
-  background-image: url("media/joy-bts.jpeg");
+  background-image: url("media/joy-rooftop-web.jpeg");
 }
 
 .work-meta {
@@ -375,8 +388,8 @@ h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: .7fr 1.3fr;
-  align-items: stretch;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: center;
   background: #121214;
 }
 
@@ -393,13 +406,16 @@ h1 {
 }
 
 .gallery-image {
-  min-height: 700px;
+  height: 560px;
+  margin: 70px 7vw 70px 0;
+  overflow: hidden;
 }
 
 .gallery-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
 }
 
 .statement {
@@ -568,21 +584,84 @@ footer small {
 }
 
 @media (max-width: 650px) {
-  .site-header { padding-inline: 6vw; }
-  .brand { letter-spacing: 3px; }
-  .hero { padding-inline: 6vw; min-height: 930px; }
-  h1 { font-size: 82px; letter-spacing: -4px; }
-  .hero-portrait { height: 55%; }
+  .site-header {
+    padding: 22px 6vw;
+    background: rgba(11,11,12,.96);
+  }
+  .brand {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  .nav-links {
+    top: 70px;
+    right: 0;
+    left: 0;
+    gap: 10px;
+    padding: 18px 6vw 24px;
+    background: rgba(11,11,12,.98);
+  }
+  .nav-links a { text-align: center; }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 125px 6vw 0;
+  }
+  .hero-copy { padding-top: 0; }
+  h1 {
+    font-size: clamp(62px, 22vw, 88px);
+    line-height: .82;
+    letter-spacing: -4px;
+  }
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .button { text-align: center; }
+  .hero-portrait {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 1177 / 1800;
+    margin: 42px -6vw 0;
+  }
+  .hero-portrait::after {
+    background: linear-gradient(180deg, #0b0b0c 0%, transparent 16%);
+  }
   .hero-index { display: none; }
   .section { padding: 85px 6vw; }
   .about { grid-template-columns: 1fr; }
-  .about-card, .about-card img { min-height: 500px; height: 500px; }
+  .about h2,
+  .work h2,
+  .gallery h2,
+  .contact-section h2 { font-size: 44px; }
+  .about-card,
+  .about-card img {
+    min-height: 0;
+    height: 440px;
+  }
   .work-grid { grid-template-columns: 1fr; }
   .work-card.large { grid-column: auto; }
+  .work-card { min-height: 0; }
+  .work-image { height: 360px; }
   .gallery-copy { padding: 85px 6vw; }
-  .gallery-image { min-height: 520px; }
+  .gallery-image {
+    height: 420px;
+    margin: 0 6vw 70px;
+  }
+  .gallery-image img { object-position: center 22%; }
   .statement { grid-template-columns: 1fr; }
   .statement p { border-right: 0; border-bottom: 1px solid rgba(0,0,0,.22); }
+  .contact-section {
+    gap: 45px;
+    padding: 85px 6vw;
+  }
   .contact-form { grid-template-columns: 1fr; }
   .field.full, .contact-form button { grid-column: auto; }
 }
