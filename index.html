@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Joy Christos — singer, actress, and creative artist." />
+  <title>Joy Christos | Singer & Actress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">JOY CHRISTOS</a>
+
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Book Joy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">SINGER · ACTRESS</p>
+        <h1>Joy<br>Christos</h1>
+        <p class="hero-text">
+          A magnetic voice, a commanding presence, and storytelling rooted in truth.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore her work</a>
+          <a class="button secondary" href="#contact">Booking inquiries</a>
+        </div>
+      </div>
+
+      <div class="hero-portrait">
+        <img src="media/joy-headshot.jpeg" alt="Portrait of Joy Christos">
+        <div class="portrait-frame"></div>
+      </div>
+
+      <div class="hero-index">
+        <span>01</span>
+        <div></div>
+        <span>ARTIST PORTFOLIO</span>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Artist specialties">
+      <div>
+        <span>LIVE PERFORMANCE</span>
+        <span>VOCALS</span>
+        <span>SCREEN ACTING</span>
+        <span>STAGE</span>
+        <span>CREATIVE COLLABORATION</span>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-label">
+        <p class="eyebrow gold">ABOUT JOY</p>
+        <span class="section-number">02</span>
+      </div>
+
+      <div class="about-copy">
+        <h2>Artistry.<br>Authenticity.<br>Impact.</h2>
+        <p>
+          Joy Christos is a multifaceted singer and actress whose work moves between
+          music, stage, screen, and visual storytelling.
+        </p>
+        <p>
+          Her voice is soulful and expressive. Her presence is grounded, cinematic,
+          and direct. Whether performing live, recording in the studio, or stepping
+          into character, Joy brings emotional clarity and unmistakable energy to
+          every project.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <img src="media/joy-bts.jpeg" alt="Joy Christos during a rooftop photoshoot">
+        <div class="card-caption">
+          <span>BEHIND THE SCENES</span>
+          <strong>Los Angeles</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow gold">SELECTED WORK</p>
+          <h2>Music & Acting</h2>
+        </div>
+        <p>
+          A portfolio built for producers, directors, casting teams, collaborators,
+          and creative partners.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card large">
+          <div class="work-image headshot-crop"></div>
+          <div class="work-meta">
+            <span>VOCAL PERFORMANCE</span>
+            <h3>Live & Studio</h3>
+            <p>Lead vocals, harmonies, artist collaborations, and original music.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-image bts-crop"></div>
+          <div class="work-meta">
+            <span>SCREEN & EDITORIAL</span>
+            <h3>Acting Reel</h3>
+            <p>Commercial, dramatic, lifestyle, and character-driven work.</p>
+          </div>
+        </article>
+
+        <article class="work-card text-card">
+          <div class="quote-mark">“</div>
+          <blockquote>
+            Presence that reads instantly. A voice that stays with you.
+          </blockquote>
+          <a href="#contact">Request reel and materials →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="gallery-copy">
+        <p class="eyebrow gold">VISUAL STORYTELLING</p>
+        <h2>Behind the image.</h2>
+        <p>
+          Editorial work, performance stills, portraits, and production moments.
+        </p>
+      </div>
+
+      <div class="gallery-image">
+        <img src="media/joy-bts.jpeg" alt="Behind the scenes photoshoot with Joy Christos">
+      </div>
+    </section>
+
+    <section class="statement">
+      <p>VOICE</p>
+      <p>PRESENCE</p>
+      <p>STORY</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow gold">LET'S CREATE</p>
+        <h2>Book Joy Christos.</h2>
+        <p>
+          For performance bookings, acting opportunities, creative collaborations,
+          press, and representation inquiries.
+        </p>
+      </div>
+
+      <form class="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+        </div>
+        <div class="field full">
+          <label for="company">Company / Production</label>
+          <input id="company" type="text">
+        </div>
+        <div class="field full">
+          <label for="project">Project type</label>
+          <select id="project">
+            <option>Music performance</option>
+            <option>Acting / casting</option>
+            <option>Creative collaboration</option>
+            <option>Press / interview</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="message">Project details</label>
+          <textarea id="message" rows="6" required></textarea>
+        </div>
+        <button type="submit">Send inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#home">JOY CHRISTOS</a>
+    <p>Singer · Actress · Los Angeles</p>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">IMDb</a>
+      <a href="#">Spotify</a>
+    </div>
+    <small>© <span id="year"></span> Joy Christos. All rights reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
