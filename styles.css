@@ -324,18 +324,18 @@ h1 {
 }
 
 .work-image {
+  display: block;
+  width: 100%;
   height: 300px;
-  background-position: center;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .headshot-crop {
-  background-image: url("media/joy-headshot-web.jpeg");
-  background-position: center 25%;
+  object-position: center 25%;
 }
 
 .bts-crop {
-  background-image: url("media/joy-rooftop-web.jpeg");
+  object-position: 32% center;
 }
 
 .work-meta {
@@ -646,6 +646,7 @@ footer small {
     min-height: 0;
     height: 440px;
   }
+  .about-card img { object-position: 32% center; }
   .work-grid { grid-template-columns: 1fr; }
   .work-card.large { grid-column: auto; }
   .work-card { min-height: 0; }
@@ -655,7 +656,7 @@ footer small {
     height: 420px;
     margin: 0 6vw 70px;
   }
-  .gallery-image img { object-position: center 22%; }
+  .gallery-image img { object-position: 32% 22%; }
   .statement { grid-template-columns: 1fr; }
   .statement p { border-right: 0; border-bottom: 1px solid rgba(0,0,0,.22); }
   .contact-section {
