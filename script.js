@@ -1,3 +1,20 @@
+// Always present the portfolio from the beginning when the page is opened or
+// restored from the browser's back-forward cache.
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("pageshow", () => {
+  const scrollBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = "auto";
+  window.scrollTo(0, 0);
+
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.style.scrollBehavior = scrollBehavior;
+  });
+});
+
 const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
