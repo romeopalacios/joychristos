@@ -1,17 +1,29 @@
-// Always present the portfolio from the beginning when the page is opened or
-// restored from the browser's back-forward cache.
-if ("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
+// Mobile browsers can restore the previous hash/scroll position after the
+// first layout pass. Keep startup scrolling instant and reset again after the
+// page and its high-priority hero image have finished laying out.
+const resetPageToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+if (window.location.hash) {
+  history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
 }
 
-window.addEventListener("pageshow", () => {
-  const scrollBehavior = document.documentElement.style.scrollBehavior;
-  document.documentElement.style.scrollBehavior = "auto";
-  window.scrollTo(0, 0);
+resetPageToTop();
 
+window.addEventListener("pageshow", () => {
+  document.documentElement.classList.add("page-starting");
+  resetPageToTop();
+  requestAnimationFrame(resetPageToTop);
+  window.setTimeout(() => {
+    resetPageToTop();
+    document.documentElement.classList.remove("page-starting");
+  }, 250);
+});
+
+window.addEventListener("load", () => {
+  resetPageToTop();
   requestAnimationFrame(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.style.scrollBehavior = scrollBehavior;
+    resetPageToTop();
+    document.documentElement.classList.remove("page-starting");
   });
 });
 

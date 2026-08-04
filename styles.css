@@ -12,6 +12,11 @@
 
 html { scroll-behavior: smooth; }
 
+html.page-starting {
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
+
 body {
   margin: 0;
   color: var(--white);
