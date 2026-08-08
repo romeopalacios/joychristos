@@ -340,6 +340,10 @@ h1 {
   object-position: center 25%;
 }
 
+.performance-crop {
+  object-position: 68% center;
+}
+
 .bts-crop {
   object-position: 32% center;
 }
