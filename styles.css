@@ -59,6 +59,12 @@
 .contact-main .contact-form>input[type="hidden"]{display:none}
 .about-main{display:block;min-height:100svh}
 .about-main .inner-copy{width:min(760px,100%);min-height:100svh;margin:0 auto;padding-right:32px;padding-left:32px}
+.exact-signature{aspect-ratio:1210/1060}
+.exact-signature .trace{fill:none;stroke:#fff;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;filter:none;animation:trace-ink 1s linear forwards}
+.signature-writing.exact-signature .trace-j{animation-delay:.1s;animation-duration:.8s}.signature-writing.exact-signature .trace-oy{animation-delay:.65s;animation-duration:1.05s}.signature-writing.exact-signature .trace-c{animation-delay:1.55s;animation-duration:.85s}.signature-writing.exact-signature .trace-name{animation-delay:2.25s;animation-duration:1.35s}.signature-writing.exact-signature .trace-heart{stroke-width:54;animation-delay:3.42s;animation-duration:.35s}
+.exact-signature .mask-finish{opacity:0;animation:finish-ink .01s linear 3.75s forwards}
+.hero-signature .trace{animation:none;stroke-dashoffset:0}.hero-signature .mask-finish{opacity:1;animation:none}
+@keyframes trace-ink{to{stroke-dashoffset:0}}@keyframes finish-ink{to{opacity:1}}
 .comedy{background-image:url('assets/comedy-background-web.jpg')}
 
 /* Mobile optimization */
