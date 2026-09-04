@@ -45,7 +45,7 @@ const mobileComedy=document.querySelector('.comedy');
 if(mobileComedy&&window.matchMedia('(max-width: 600px)').matches){
   const mobileVideoObserver=new IntersectionObserver(entries=>{
     if(entries.some(entry=>entry.isIntersecting)){
-      window.setTimeout(()=>mobileComedy.classList.add('mobile-video-ready'),reduceMotion?0:1200);
+      window.setTimeout(()=>mobileComedy.classList.add('mobile-video-ready'),reduceMotion?0:700);
       mobileVideoObserver.disconnect();
     }
   },{threshold:.5});
