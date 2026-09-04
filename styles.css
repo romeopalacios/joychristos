@@ -113,8 +113,11 @@
 
 /* Stable signature rendering */
 .signature-writing.exact-signature{aspect-ratio:1210/900;overflow:hidden}
-.signature-writing.exact-signature .signature-final{display:block;width:112%;height:auto;margin:-8% 0 0 -6%;opacity:1;clip-path:inset(0 82% 0 0);animation:stable-signature-reveal 3.15s cubic-bezier(.4,0,.18,1) .15s forwards;will-change:clip-path}
+.signature-writing.exact-signature .signature-final{display:block;width:112%;height:auto;margin:-8% 0 0 -6%;opacity:1;clip-path:none;animation:none}
+.signature-cover{position:absolute;z-index:3;inset:-3%;display:block;background:linear-gradient(90deg,transparent 0,#050505 4%,#050505 100%);transform:translate3d(0,0,0);will-change:transform;backface-visibility:hidden;animation:smooth-signature-draw 3.25s cubic-bezier(.42,0,.18,1) .12s forwards}
+.hero-signature .signature-cover{display:none}
 .hero-signature.exact-signature{aspect-ratio:1210/900;overflow:hidden}
 .hero-signature.exact-signature .signature-final{display:block;width:112%;height:auto;margin:-8% 0 0 -6%;opacity:1;clip-path:inset(0);animation:none}
 @keyframes stable-signature-reveal{0%{clip-path:inset(0 82% 0 0)}28%{clip-path:inset(0 60% 0 0)}52%{clip-path:inset(0 42% 0 0)}76%{clip-path:inset(0 20% 0 0)}100%{clip-path:inset(0)}}
+@keyframes smooth-signature-draw{to{transform:translate3d(102%,0,0)}}
 @media(max-width:600px){.signature-writing.exact-signature,.hero-signature.exact-signature{width:92vw;aspect-ratio:1210/900}.signature-writing.exact-signature .signature-final,.hero-signature.exact-signature .signature-final{width:110%;margin:-7% 0 0 -5%}}
