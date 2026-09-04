@@ -29,4 +29,14 @@ if(track){
 }
 const curtainButton=document.querySelector('.video-curtain');
 if(curtainButton){const comedyVideo=curtainButton.parentElement.querySelector('video');curtainButton.addEventListener('click',()=>{curtainButton.classList.add('opening');window.setTimeout(()=>{curtainButton.classList.add('opened');comedyVideo.play().catch(()=>{})},reduceMotion?0:1050)})}
+const mobileComedy=document.querySelector('.comedy');
+if(mobileComedy&&window.matchMedia('(max-width: 600px)').matches){
+  const mobileVideoObserver=new IntersectionObserver(entries=>{
+    if(entries.some(entry=>entry.isIntersecting)){
+      window.setTimeout(()=>mobileComedy.classList.add('mobile-video-ready'),reduceMotion?0:1200);
+      mobileVideoObserver.disconnect();
+    }
+  },{threshold:.5});
+  mobileVideoObserver.observe(mobileComedy);
+}
 document.querySelectorAll('[data-year]').forEach(node=>{node.textContent=new Date().getFullYear()});

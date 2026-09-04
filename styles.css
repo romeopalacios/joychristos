@@ -72,6 +72,8 @@
   .youtube-frame,.comedy .local-frame{width:90vw;right:0;top:0;margin:0;aspect-ratio:16/9}
   .scroll-cue{bottom:max(20px,env(safe-area-inset-bottom));left:20px}
   .comedy{align-items:flex-end;justify-content:center;padding-right:18px;padding-left:18px;padding-bottom:15vh;background-position:43% center}
+  .comedy .local-frame{opacity:0!important;transform:translateY(24px)!important;transition:opacity .85s ease,transform .85s ease}
+  .comedy.mobile-video-ready .local-frame{opacity:1!important;transform:translateY(0)!important}
   .video-curtain{touch-action:manipulation}.curtain-play{width:54px;height:54px}
   .gallery-panel{justify-content:center;padding-top:88px;padding-bottom:58px;background-position:38% center}
   .gallery-heading{margin:0 0 20px}.gallery-heading h2{font-size:64px}
