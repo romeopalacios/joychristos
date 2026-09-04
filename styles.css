@@ -84,10 +84,13 @@
   .wordmark{font-size:10px;letter-spacing:.22em;white-space:nowrap}
   .site-header nav{gap:14px}.site-header nav a{min-height:42px;display:flex;align-items:center;padding:0;font-size:9px}
   .panel{min-height:100svh;padding-top:max(88px,calc(env(safe-area-inset-top) + 70px));padding-bottom:max(34px,env(safe-area-inset-bottom))}
-  .signature-writing{width:96vw}
+  .signature-writing{width:94vw;transform:none;filter:none}
+  .signature-writing.exact-signature:after{inset:-1%;background:linear-gradient(90deg,transparent 0,#050505 9%,#050505 100%);animation-duration:3.2s}
+  .signature-writing .ink-point{display:none}
+  .intro.done .signature-writing{transform:translate3d(0,-21vh,0) scale(1.02);opacity:.46;filter:none}
   .intro p{bottom:max(24px,env(safe-area-inset-bottom));font-size:8px;letter-spacing:.35em}
   .hero{align-items:flex-end;padding-right:18px;padding-left:18px;padding-bottom:14vh}
-  .hero-signature{top:29%;width:98vw;opacity:.5}
+  .hero-signature{left:50%;top:29%;width:96vw;opacity:.48;transform:translate(-50%,-50%);filter:none}
   .youtube-frame,.comedy .local-frame{width:90vw;right:0;top:0;margin:0;aspect-ratio:16/9}
   .scroll-cue{bottom:max(20px,env(safe-area-inset-bottom));left:20px}
   .comedy{align-items:flex-end;justify-content:center;padding-right:18px;padding-left:18px;padding-bottom:15vh;background-position:43% center}
