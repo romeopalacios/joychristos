@@ -34,7 +34,7 @@
 .hero{justify-content:flex-end}
 .youtube-frame,.comedy .local-frame{width:min(680px,52vw);margin-right:0;position:relative;right:-4vw;top:17vh}
 @media(max-width:850px){.hero{display:flex;justify-content:center}.youtube-frame,.comedy .local-frame{width:min(88vw,700px);margin-right:0;right:auto;top:0}}
-@keyframes signature-glow{0%,100%{opacity:.42;filter:drop-shadow(0 0 14px rgba(212,175,97,.14))}50%{opacity:.5;filter:drop-shadow(0 0 22px rgba(212,175,97,.22))}}
+@keyframes signature-glow{0%,100%{opacity:.58;filter:drop-shadow(0 0 14px rgba(212,175,97,.14))}50%{opacity:.66;filter:drop-shadow(0 0 22px rgba(212,175,97,.22))}}
 .comedy{display:flex;align-items:center;justify-content:flex-end}
 .comedy .local-frame{justify-self:auto}
 @media(max-width:850px){.comedy{justify-content:center}}
@@ -127,12 +127,12 @@
 
 /* True brush-drawn signature */
 .signature-writing.exact-signature,.hero-signature.exact-signature{aspect-ratio:1210/1060;overflow:visible}
-.signature-writing.exact-signature .signature-final{width:100%;height:100%;margin:0;object-fit:contain;opacity:.12;animation:none!important;filter:drop-shadow(1px 0 0 rgba(212,175,97,.72)) drop-shadow(-1px 0 0 rgba(212,175,97,.72)) drop-shadow(0 1px 0 rgba(212,175,97,.72)) drop-shadow(0 -1px 0 rgba(212,175,97,.72))}
-.signature-canvas{position:absolute;z-index:2;inset:0;display:block;width:100%;height:100%;opacity:1;filter:drop-shadow(1px 0 0 rgba(212,175,97,.72)) drop-shadow(-1px 0 0 rgba(212,175,97,.72)) drop-shadow(0 1px 0 rgba(212,175,97,.72)) drop-shadow(0 -1px 0 rgba(212,175,97,.72));transition:opacity .18s linear}
+.signature-writing.exact-signature .signature-final{width:100%;height:100%;margin:0;object-fit:contain;opacity:.12;animation:none!important;filter:url(#signatureThicken)}
+.signature-canvas{position:absolute;z-index:2;inset:0;display:block;width:100%;height:100%;opacity:1;filter:url(#signatureThicken);transition:opacity .18s linear}
 .signature-writing.drawing-complete .signature-final{opacity:1}.signature-writing.drawing-complete .signature-canvas{opacity:0}
-.hero-signature.exact-signature .signature-final{width:100%;height:100%;margin:0;object-fit:contain;opacity:1;filter:drop-shadow(1px 0 0 rgba(212,175,97,.62)) drop-shadow(-1px 0 0 rgba(212,175,97,.62)) drop-shadow(0 1px 0 rgba(212,175,97,.62)) drop-shadow(0 -1px 0 rgba(212,175,97,.62))}.hero-signature .signature-canvas{display:none}
+.hero-signature.exact-signature .signature-final{width:100%;height:100%;margin:0;object-fit:contain;opacity:1;filter:url(#signatureThicken)}.hero-signature .signature-canvas{display:none}
 @media(max-width:600px){.signature-writing.exact-signature,.hero-signature.exact-signature{width:94vw;aspect-ratio:1210/1060}.signature-writing.exact-signature .signature-final,.hero-signature.exact-signature .signature-final{width:100%;height:100%;margin:0}}
 .intro .exact-signature{background:url('assets/signature-ink.png?v=10') center/contain no-repeat}
 .signature-writing.exact-signature .signature-final{opacity:.3}
-.hero-signature.exact-signature{left:30%;top:42%;width:min(1000px,72vw);opacity:.46;background:url('assets/signature-ink.png?v=10') center/contain no-repeat}
-@media(max-width:600px){.signature-writing.exact-signature .signature-final{opacity:.2}.hero-signature.exact-signature{left:50%;top:29%;width:94vw;opacity:.44}}
+.hero-signature.exact-signature{left:30%;top:42%;width:min(1000px,72vw);opacity:.62;background:none}
+@media(max-width:600px){.signature-writing.exact-signature .signature-final{opacity:.2}.hero-signature.exact-signature{left:50%;top:29%;width:94vw;opacity:.58}}
