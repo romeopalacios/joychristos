@@ -1,215 +1,67 @@
-<!DOCTYPE html>
-<html lang="en" class="page-starting">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Joy Christos — singer, actress, and creative artist." />
-  <title>Joy Christos | Singer & Actress</title>
-  <script>
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Joy Christos — actor, comedian, and storyteller."><title>Joy Christos</title>
+  <script>try{document.documentElement.classList.add(sessionStorage.getItem('joyIntroPlayed')?'skip-intro':'is-loading')}catch(e){document.documentElement.classList.add('is-loading')}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home">JOY CHRISTOS</a>
-
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a class="nav-cta" href="#contact">Book Joy</a>
-    </nav>
-  </header>
-
+  <div class="intro" aria-hidden="true">
+    <svg class="signature-writing" viewBox="0 0 1200 430" role="presentation">
+      <defs>
+        <linearGradient id="signatureGold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#60401d"/><stop offset=".14" stop-color="#9f7232"/>
+          <stop offset=".31" stop-color="#d8b968"/><stop offset=".43" stop-color="#fff2c2"/>
+          <stop offset=".53" stop-color="#b9873e"/><stop offset=".68" stop-color="#f5dda0"/>
+          <stop offset=".84" stop-color="#b18443"/><stop offset="1" stop-color="#6b471f"/>
+        </linearGradient>
+      </defs>
+      <path pathLength="1" d="M145 66 C119 116 128 267 119 318 C111 365 83 384 59 367 C36 351 46 315 74 302"/>
+      <path pathLength="1" d="M148 274 C162 226 225 220 237 262 C250 307 206 339 174 318 C143 298 154 251 190 242 C222 235 250 257 265 285"/>
+      <path pathLength="1" d="M265 238 C268 275 268 318 291 320 C317 322 330 272 337 238 M337 238 C330 298 326 369 294 389 C275 401 255 387 270 370"/>
+      <path pathLength="1" d="M500 101 C469 66 414 93 393 151 C371 214 386 298 435 320 C479 340 520 303 532 262"/>
+      <path pathLength="1" d="M523 159 C512 213 508 269 511 319 M516 270 C537 223 573 221 577 253 L575 319"/>
+      <path pathLength="1" d="M593 239 L590 319 M592 267 C608 236 629 228 648 241"/>
+      <path pathLength="1" d="M669 241 L666 319"/>
+      <path class="signature-heart" pathLength="1" d="M662 210 C654 198 636 202 638 216 C641 229 659 238 669 246 C680 234 697 224 698 211 C698 197 680 196 669 209 C666 212 664 215 662 218"/>
+      <path pathLength="1" d="M749 246 C725 224 688 237 693 262 C697 282 746 276 747 301 C747 329 700 329 686 308"/>
+      <path pathLength="1" d="M778 195 L774 294 C773 325 795 329 814 306 M752 243 L806 241"/>
+      <path pathLength="1" d="M824 275 C831 228 889 222 902 263 C915 306 875 336 843 319 C813 303 820 258 851 244 C880 231 908 249 925 280"/>
+      <path pathLength="1" d="M1004 246 C980 224 941 236 947 263 C951 282 998 276 1001 300 C1003 328 955 330 939 308"/>
+      <path class="signature-flourish" pathLength="1" d="M113 333 C285 344 473 349 641 340 C787 332 928 333 1051 348"/>
+    </svg>
+    <p>Joy Christos</p>
+  </div>
+  <header class="site-header"><a class="wordmark" href="index.html" aria-label="Joy Christos home">JOY CHRISTOS</a><nav aria-label="Primary navigation"><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
   <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">SINGER · ACTRESS</p>
-        <h1>Joy<br>Christos</h1>
-        <p class="hero-text">
-          A magnetic voice, a commanding presence, and storytelling rooted in truth.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#work">Explore her work</a>
-          <a class="button secondary" href="#contact">Booking inquiries</a>
-        </div>
-      </div>
-
-      <div class="hero-portrait">
-        <img src="media/joy-headshot-web.jpeg" alt="Portrait of Joy Christos" width="1177" height="1800" fetchpriority="high" decoding="async">
-        <div class="portrait-frame"></div>
-      </div>
-
-      <div class="hero-index">
-        <span>01</span>
-        <div></div>
-        <span>ARTIST PORTFOLIO</span>
+    <section class="panel hero" id="home">
+      <div class="panel-number">01 / 03</div>
+      <div class="media-frame youtube-frame reveal"><iframe src="https://www.youtube-nocookie.com/embed/Oq8a6v9V0Hs?rel=0&modestbranding=1" title="Joy Christos featured video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <a class="scroll-cue" href="#comedy" aria-label="Scroll to comedy section"><span></span>Scroll</a>
+    </section>
+    <section class="panel comedy" id="comedy">
+      <div class="panel-shade"></div>
+      <div class="panel-number">02 / 03</div>
+      <div class="media-frame local-frame reveal">
+        <video controls playsinline preload="metadata"><source src="assets/comedy-film.mov" type="video/quicktime"><source src="comedy background/comedy movie.MOV" type="video/mp4">Your browser does not support embedded video.</video>
+        <button class="video-curtain" type="button" aria-label="Open the curtains and play comedy video">
+          <span class="mini-curtain mini-curtain-left"></span><span class="mini-curtain mini-curtain-right"></span>
+          <span class="curtain-play" aria-hidden="true">▶</span>
+        </button>
       </div>
     </section>
-
-    <section class="marquee" aria-label="Artist specialties">
-      <div>
-        <span>LIVE PERFORMANCE</span>
-        <span>VOCALS</span>
-        <span>SCREEN ACTING</span>
-        <span>STAGE</span>
-        <span>CREATIVE COLLABORATION</span>
+    <section class="panel gallery-panel" id="gallery">
+      <div class="panel-shade"></div>
+      <div class="gallery-heading reveal"><h2>Gallery</h2></div>
+      <div class="gallery-track" aria-label="Joy Christos photo gallery" tabindex="0">
+        <figure><img src="assets/gallery-01-web.jpg" alt="Joy Christos portrait" loading="lazy" decoding="async"><figcaption>Portraits / 01</figcaption></figure>
+        <figure><img src="assets/gallery-02-web.jpg" alt="Joy Christos editorial portrait" loading="lazy" decoding="async"><figcaption>Editorial / 02</figcaption></figure>
+        <figure><img src="assets/gallery-03-web.jpg" alt="Joy Christos behind the scenes" loading="lazy" decoding="async"><figcaption>Behind the scenes / 03</figcaption></figure>
       </div>
+      <div class="drag-note">Drag to explore <span>→</span></div>
+      <footer class="panel-footer"><span>© <span data-year></span> Joy Christos</span><a href="contact.html">Let’s work together</a></footer>
     </section>
-
-    <section class="section about" id="about">
-      <div class="about-label">
-        <p class="eyebrow gold">ABOUT JOY</p>
-        <span class="section-number">02</span>
-      </div>
-
-      <div class="about-copy">
-        <h2>Artistry.<br>Authenticity.<br>Impact.</h2>
-        <p>
-          Joy Christos is a multifaceted singer and actress whose work moves between
-          music, stage, screen, and visual storytelling.
-        </p>
-        <p>
-          Her voice is soulful and expressive. Her presence is grounded, cinematic,
-          and direct. Whether performing live, recording in the studio, or stepping
-          into character, Joy brings emotional clarity and unmistakable energy to
-          every project.
-        </p>
-      </div>
-
-      <div class="about-card">
-        <img src="media/P1142854 copy.JPG" alt="Portrait of Joy Christos in a denim jacket" width="1537" height="2048" loading="lazy" decoding="async">
-        <div class="card-caption">
-          <span>BEHIND THE SCENES</span>
-          <strong>Los Angeles</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="section work" id="work">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow gold">SELECTED WORK</p>
-          <h2>Music & Acting</h2>
-        </div>
-        <p>
-          A portfolio built for producers, directors, casting teams, collaborators,
-          and creative partners.
-        </p>
-      </div>
-
-      <div class="work-grid">
-        <article class="work-card large">
-          <img class="work-image performance-crop" src="media/P1142954.JPG" alt="Studio portrait of Joy Christos" width="2048" height="1537" loading="lazy" decoding="async">
-          <div class="work-meta">
-            <span>VOCAL PERFORMANCE</span>
-            <h3>Live & Studio</h3>
-            <p>Lead vocals, harmonies, artist collaborations, and original music.</p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <img class="work-image bts-crop" src="media/joy-main.jpeg" alt="Joy Christos posing during a rooftop photoshoot" width="3000" height="4000" loading="lazy" decoding="async">
-          <div class="work-meta">
-            <span>SCREEN & EDITORIAL</span>
-            <h3>Acting Reel</h3>
-            <p>Commercial, dramatic, lifestyle, and character-driven work.</p>
-          </div>
-        </article>
-
-        <article class="work-card text-card">
-          <div class="quote-mark">“</div>
-          <blockquote>
-            Presence that reads instantly. A voice that stays with you.
-          </blockquote>
-          <a href="#contact">Request reel and materials →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="gallery" id="gallery">
-      <div class="gallery-copy">
-        <p class="eyebrow gold">VISUAL STORYTELLING</p>
-        <h2>Behind the image.</h2>
-        <p>
-          Editorial work, performance stills, portraits, and production moments.
-        </p>
-      </div>
-
-      <div class="gallery-image">
-        <img src="media/IMG_8624-web.jpeg" alt="Behind the scenes with Joy Christos" width="1800" height="2400" loading="lazy" decoding="async">
-      </div>
-    </section>
-
-    <section class="statement">
-      <p>VOICE</p>
-      <p>PRESENCE</p>
-      <p>STORY</p>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="contact-copy">
-        <p class="eyebrow gold">LET'S CREATE</p>
-        <h2>Book Joy Christos.</h2>
-        <p>
-          For performance bookings, acting opportunities, creative collaborations,
-          press, and representation inquiries.
-        </p>
-      </div>
-
-      <form class="contact-form">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" type="text" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" type="email" required>
-        </div>
-        <div class="field full">
-          <label for="company">Company / Production</label>
-          <input id="company" type="text">
-        </div>
-        <div class="field full">
-          <label for="project">Project type</label>
-          <select id="project">
-            <option>Music performance</option>
-            <option>Acting / casting</option>
-            <option>Creative collaboration</option>
-            <option>Press / interview</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field full">
-          <label for="message">Project details</label>
-          <textarea id="message" rows="6" required></textarea>
-        </div>
-        <button type="submit">Send inquiry</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <a class="brand footer-brand" href="#home">JOY CHRISTOS</a>
-    <p>Singer · Actress · Los Angeles</p>
-    <div class="footer-links">
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-      <a href="#">IMDb</a>
-      <a href="#">Spotify</a>
-    </div>
-    <small>© <span id="year"></span> Joy Christos. All rights reserved.</small>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  </main><script src="script.js"></script>
+</body></html>

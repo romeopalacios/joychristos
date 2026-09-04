@@ -1,50 +1,13 @@
-// Mobile browsers can restore the previous hash/scroll position after the
-// first layout pass. Keep startup scrolling instant and reset again after the
-// page and its high-priority hero image have finished laying out.
-const resetPageToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-
-if (window.location.hash) {
-  history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-}
-
-resetPageToTop();
-
-window.addEventListener("pageshow", () => {
-  document.documentElement.classList.add("page-starting");
-  resetPageToTop();
-  requestAnimationFrame(resetPageToTop);
-  window.setTimeout(() => {
-    resetPageToTop();
-    document.documentElement.classList.remove("page-starting");
-  }, 250);
-});
-
-window.addEventListener("load", () => {
-  resetPageToTop();
-  requestAnimationFrame(() => {
-    resetPageToTop();
-    document.documentElement.classList.remove("page-starting");
-  });
-});
-
-const menuButton = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-menuButton.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(open));
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-  });
-});
-
-document.querySelector(".contact-form").addEventListener("submit", event => {
-  event.preventDefault();
-  alert("Inquiry received. Connect this form to Formspree, HubSpot, or your own backend before launch.");
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+const intro=document.querySelector('.intro');
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const openingSignature=document.querySelector('.signature-writing');
+const hero=document.querySelector('.hero');
+const dockSignature=()=>{if(openingSignature&&hero){openingSignature.classList.remove('signature-writing');openingSignature.classList.add('hero-signature');hero.prepend(openingSignature)}};
+if(document.documentElement.classList.contains('skip-intro')){dockSignature();intro?.remove();document.documentElement.classList.remove('is-loading')}else if(intro){const finish=()=>{try{sessionStorage.setItem('joyIntroPlayed','true')}catch(e){}intro.classList.add('done');document.documentElement.classList.remove('is-loading');setTimeout(()=>{dockSignature();intro.remove()},1480)};window.addEventListener('load',()=>setTimeout(finish,reduceMotion?150:4300),{once:true});intro.addEventListener('click',finish,{once:true})}
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.18});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const track=document.querySelector('.gallery-track');
+if(track){let dragging=false,startX=0,startScroll=0;track.addEventListener('pointerdown',e=>{dragging=true;startX=e.clientX;startScroll=track.scrollLeft;track.classList.add('grabbing');track.setPointerCapture(e.pointerId)});track.addEventListener('pointermove',e=>{if(dragging)track.scrollLeft=startScroll-(e.clientX-startX)});const stop=()=>{dragging=false;track.classList.remove('grabbing')};track.addEventListener('pointerup',stop);track.addEventListener('pointercancel',stop)}
+const curtainButton=document.querySelector('.video-curtain');
+if(curtainButton){const comedyVideo=curtainButton.parentElement.querySelector('video');curtainButton.addEventListener('click',()=>{curtainButton.classList.add('opening');window.setTimeout(()=>{curtainButton.classList.add('opened');comedyVideo.play().catch(()=>{})},reduceMotion?0:1050)})}
+document.querySelectorAll('[data-year]').forEach(node=>{node.textContent=new Date().getFullYear()});
