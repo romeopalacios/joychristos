@@ -121,3 +121,6 @@
 @keyframes stable-signature-reveal{0%{clip-path:inset(0 82% 0 0)}28%{clip-path:inset(0 60% 0 0)}52%{clip-path:inset(0 42% 0 0)}76%{clip-path:inset(0 20% 0 0)}100%{clip-path:inset(0)}}
 @keyframes smooth-signature-draw{to{transform:translate3d(102%,0,0)}}
 @media(max-width:600px){.signature-writing.exact-signature,.hero-signature.exact-signature{width:92vw;aspect-ratio:1210/900}.signature-writing.exact-signature .signature-final,.hero-signature.exact-signature .signature-final{width:110%;margin:-7% 0 0 -5%}}
+.signature-writing .signature-cover{display:none!important}
+.signature-writing.exact-signature .signature-final{opacity:.45;animation:signature-visible-in 2.65s ease-out .1s forwards!important}
+@keyframes signature-visible-in{from{opacity:.45;filter:brightness(.82)}to{opacity:1;filter:brightness(1)}}
