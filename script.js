@@ -7,7 +7,26 @@ if(document.documentElement.classList.contains('skip-intro')){dockSignature();in
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.18});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const track=document.querySelector('.gallery-track');
-if(track){let dragging=false,startX=0,startScroll=0;track.addEventListener('pointerdown',e=>{dragging=true;startX=e.clientX;startScroll=track.scrollLeft;track.classList.add('grabbing');track.setPointerCapture(e.pointerId)});track.addEventListener('pointermove',e=>{if(dragging)track.scrollLeft=startScroll-(e.clientX-startX)});const stop=()=>{dragging=false;track.classList.remove('grabbing')};track.addEventListener('pointerup',stop);track.addEventListener('pointercancel',stop)}
+if(track){
+  let dragging=false,startX=0,startScroll=0,pointerId=null;
+  track.addEventListener('pointerdown',e=>{
+    if(e.pointerType!=='mouse'||e.button!==0)return;
+    startX=e.clientX;startScroll=track.scrollLeft;pointerId=e.pointerId;
+  });
+  track.addEventListener('pointermove',e=>{
+    if(pointerId!==e.pointerId)return;
+    const distance=e.clientX-startX;
+    if(!dragging&&Math.abs(distance)<6)return;
+    if(!dragging){dragging=true;track.classList.add('grabbing');track.setPointerCapture(pointerId)}
+    track.scrollLeft=startScroll-distance;
+  });
+  const stop=e=>{
+    if(pointerId!==null&&e.pointerId!==pointerId)return;
+    dragging=false;pointerId=null;track.classList.remove('grabbing');
+  };
+  track.addEventListener('pointerup',stop);track.addEventListener('pointercancel',stop);
+  track.querySelectorAll('img').forEach(img=>img.addEventListener('dragstart',e=>e.preventDefault()));
+}
 const curtainButton=document.querySelector('.video-curtain');
 if(curtainButton){const comedyVideo=curtainButton.parentElement.querySelector('video');curtainButton.addEventListener('click',()=>{curtainButton.classList.add('opening');window.setTimeout(()=>{curtainButton.classList.add('opened');comedyVideo.play().catch(()=>{})},reduceMotion?0:1050)})}
 document.querySelectorAll('[data-year]').forEach(node=>{node.textContent=new Date().getFullYear()});

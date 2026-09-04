@@ -50,6 +50,7 @@
 .gallery-track::-webkit-scrollbar-track{background:rgba(255,255,255,.14)}
 .gallery-track::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
 .gallery-track img{object-fit:contain;background:rgba(0,0,0,.48)}
+.gallery-track img{pointer-events:none;user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
 .contact-main{display:block;min-height:100svh}
 .contact-main .inner-copy{width:min(760px,100%);min-height:100svh;margin:0 auto;padding-right:32px;padding-left:32px}
 .contact-main .contact-form>input[type="hidden"]{display:none}
