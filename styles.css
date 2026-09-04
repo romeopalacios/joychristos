@@ -101,7 +101,7 @@
   .video-curtain{touch-action:manipulation}.curtain-play{width:54px;height:54px}
   .gallery-panel{justify-content:center;padding-top:88px;padding-bottom:58px;background-position:38% center}
   .gallery-heading{margin:0 0 20px}.gallery-heading h2{font-size:64px}
-  .gallery-track{gap:14px;padding-bottom:20px;scroll-padding-left:0;-webkit-overflow-scrolling:touch}
+  .gallery-track{gap:14px;padding-bottom:20px;scroll-padding-left:0;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior-block:auto}
   .gallery-track figure,.gallery-track figure:nth-child(2){flex:0 0 86vw}
   .gallery-track img{height:55svh;max-height:520px;user-select:none;-webkit-user-drag:none}
   .drag-note{margin-top:4px}.panel-footer{bottom:max(14px,env(safe-area-inset-bottom))}
