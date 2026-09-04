@@ -110,3 +110,11 @@
   .inner-copy h1{font-size:clamp(66px,22vw,92px)}.inner-copy .lede{margin-top:25px;font-size:23px}.body-copy{font-size:13px;line-height:1.75}
   .contact-form{gap:17px}.contact-form input,.contact-form textarea{font-size:16px}.contact-form button{min-height:48px}
 }
+
+/* Stable signature rendering */
+.signature-writing.exact-signature{aspect-ratio:1210/900;overflow:hidden}
+.signature-writing.exact-signature .signature-final{display:block;width:112%;height:auto;margin:-8% 0 0 -6%;opacity:1;clip-path:inset(0 82% 0 0);animation:stable-signature-reveal 3.15s cubic-bezier(.4,0,.18,1) .15s forwards;will-change:clip-path}
+.hero-signature.exact-signature{aspect-ratio:1210/900;overflow:hidden}
+.hero-signature.exact-signature .signature-final{display:block;width:112%;height:auto;margin:-8% 0 0 -6%;opacity:1;clip-path:inset(0);animation:none}
+@keyframes stable-signature-reveal{0%{clip-path:inset(0 82% 0 0)}28%{clip-path:inset(0 60% 0 0)}52%{clip-path:inset(0 42% 0 0)}76%{clip-path:inset(0 20% 0 0)}100%{clip-path:inset(0)}}
+@media(max-width:600px){.signature-writing.exact-signature,.hero-signature.exact-signature{width:92vw;aspect-ratio:1210/900}.signature-writing.exact-signature .signature-final,.hero-signature.exact-signature .signature-final{width:110%;margin:-7% 0 0 -5%}}
